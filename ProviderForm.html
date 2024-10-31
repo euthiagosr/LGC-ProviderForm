@@ -9,18 +9,28 @@
   const componentAttributes = {};
 
   $Lightning.use(
-    "c:ProviderFormWrapper", 
-    function () { 
+    "c:ProviderFormWrapper",
+    function () {
       $Lightning.createComponent(
-        "c:genomicsForm", 
+        "c:genomicsForm",
         {},
-        "lightning-out", 
+        "lightning-out",
         function (cmp) {
-          console.log('The component was created.');
-        }
+          function () {
+            $Lightning.createComponent(
+              "c:reCaptchav3",
+              {},
+              "lightning-out",
+              function (cmp) {
+                console.log('The component was created.');
+              }
+            );
+          }
+        },
       );
     },
     "https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest"
   );
 </script>
+
 </html>
