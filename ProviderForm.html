@@ -9,18 +9,18 @@
   const componentAttributes = {};
 
   $Lightning.use(
-    appName, // name of the Lightning Out app
-    function () { // callback after the framework and app load
+    "c:ProviderFormWrapper", 
+    function () { 
       $Lightning.createComponent(
-        lwcComponentName, // top-level component of the Lightning Out app
-        componentAttributes, // attributes to set on the component
-        'lightning-out', // DOM element ID where the component is inserted
-        function (cmp) { // callback after the component loads
+        "c:genomicsForm", 
+        {},
+        "lightning-out", 
+        function (cmp) {
           console.log('The component was created.');
         }
       );
     },
-    sfDomain // Experience Cloud site endpoint
+    "https://letsgetcheckedus--tsrdev.sandbox.my.site.com/genomicsform"
   );
 </script>
 </html>
