@@ -9,28 +9,33 @@
   const componentAttributes = {};
 
   $Lightning.use(
-    "c:ProviderFormWrapper",
-    function () {
+    "c:ProviderFormWrapper", 
+    function () { 
       $Lightning.createComponent(
-        "c:genomicsForm",
+        "c:genomicsForm", 
         {},
-        "lightning-out",
+        "lightning-out", 
         function (cmp) {
-          function () {
-            $Lightning.createComponent(
-              "c:reCaptchav3",
-              {},
-              "lightning-out",
-              function (cmp) {
-                console.log('The component was created.');
-              }
-            );
-          }
-        },
+          console.log('The component was created.');
+        }
+      );
+    },
+    "https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest"
+  );
+
+  $Lightning.use(
+    "c:ProviderFormWrapper", 
+    function () { 
+      $Lightning.createComponent(
+        "c:reCaptchav3", 
+        {},
+        "lightning-out", 
+        function (cmp) {
+          console.log('The component was created 2.');
+        }
       );
     },
     "https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest"
   );
 </script>
-
 </html>
