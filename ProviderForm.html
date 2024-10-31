@@ -5,14 +5,14 @@
 <script>
   const appName = 'c:ProviderFormWrapper';
   const lwcComponentName = 'c:genomicsForm';
-  const sfDomain = 'https://letsgetcheckedus--tsrdev.sandbox.my.site.com/genomicsform';
+  const sfDomain = 'https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest';
   const componentAttributes = {};
 
   $Lightning.use(
-    "c:ProviderFormWrapper", 
+    appName, 
     function () { 
       $Lightning.createComponent(
-        "c:genomicsForm", 
+        lwcComponentName, 
         {},
         "lightning-out", 
         function (cmp) {
@@ -20,7 +20,7 @@
         }
       );
     },
-    "https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest"
+    sfDomain
   );
 </script>
 </html>
