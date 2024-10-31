@@ -1,28 +1,26 @@
 <html>
   <script src="https://letsgetcheckedus--tsrdev.sandbox.my.site.com/lightning/lightning.out.js"></script>
- <body>
-        <h1>My External Page 2</h1>
-        <div id="lightning-out"></div>
-        <script>
-          const appName = 'c:ProviderFormWrapper';
-          const lwcComponentName = 'c:genomicsForm';
-          const sfDomain = 'https://letsgetcheckedus--tsrdev.sandbox.my.site.com/genomicsform';
-          const componentAttibutes = {};
 
-            $Lightning.use(
-                appName, // name of the Lightning Out app
-                function () { // callback after the framework and app load
-                    $Lightning.createComponent(
-                        lwcComponentName, // top-level component of the Lightning Out app
-                        componentAttibutes, // attributes to set on the component
-                        'lightning-out', // DOM element ID where the component is inserted
-                        function (cmp) { // callback after the component loads
-                            console.log('The component was created.');
-                        }
-                    );
-                },
-                sfDomain // Experience Cloud site endpoint
-            );
-        </script>
-    </body>
+  <div id="lightning-out"></div>
+  <script>
+    const appName = 'c:ProviderFormWrapper';
+    const lwcComponentName = 'c:genomicsForm';
+    const sfDomain = 'https://letsgetcheckedus--tsrdev.sandbox.my.site.com/genomicsform';
+    const componentAttibutes = {};
+
+      $Lightning.use(
+          appName, // name of the Lightning Out app
+          function () { // callback after the framework and app load
+              $Lightning.createComponent(
+                  lwcComponentName, // top-level component of the Lightning Out app
+                  componentAttibutes, // attributes to set on the component
+                  'lightning-out', // DOM element ID where the component is inserted
+                  function (cmp) { // callback after the component loads
+                      console.log('The component was created.');
+                  }
+              );
+          },
+          sfDomain // Experience Cloud site endpoint
+      );
+  </script>
 </html>
