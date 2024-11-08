@@ -1,26 +1,39 @@
 <html>
-<script src="https://letsgetcheckedus--tsrdev.sandbox.my.site.com/lightning/lightning.out.js"></script>
 
-<div id="lightning-out"></div>
-<script>
-  const appName = 'c:ProviderFormWrapper';
-  const lwcComponentName = 'c:genomicsForm';
-  const sfDomain = 'https://letsgetcheckedus--tsrdev.sandbox.my.site.com/ltngouttest';
-  const componentAttributes = {};
+  <script src="https://letsgetcheckedus.my.site.com/lightning/lightning.out.js"></script>
 
-  $Lightning.use(
-    appName, 
-    function () { 
-      $Lightning.createComponent(
-        lwcComponentName, 
-        {},
-        "lightning-out", 
-        function (cmp) {
-          console.log('The component was created.');
-        }
-      );
-    },
-    sfDomain
-  );
-</script>
+  <div id="lightning-out"></div>
+  <script>
+    const pageURL = window.location.href; 
+    const appName = 'c:ProviderFormWrapper';
+    const lwcComponentName = 'c:genomicsForm';
+    let sfDomain;
+
+    if (pageURL.includes("dev1")) {
+      sfDomain = 'https://letsgetcheckedus--devqa.sandbox.my.site.com/ProviderForm';
+    } else if (pageURL.includes("stg2")) {
+      sfDomain = 'https://letsgetcheckedus--uat.sandbox.my.site.com/ProviderForm';
+    }  else if (pageURL.includes("github")) {
+      sfDomain = 'https://letsgetcheckedus--devqa.sandbox.my.site.com/ProviderForm';
+    }else {
+      sfDomain = 'https://letsgetcheckedus.my.site.com/ProviderForm';
+    }
+
+    const componentAttributes = {};
+
+    $Lightning.use(
+      appName, 
+      function () { 
+        $Lightning.createComponent(
+          lwcComponentName, 
+          {},
+          "lightning-out", 
+          function (cmp) {
+            console.log('Salesforce component has been created!');
+          }
+        );
+      },
+      sfDomain
+    );
+  </script>
 </html>
